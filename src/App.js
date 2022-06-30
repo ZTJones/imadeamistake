@@ -5,7 +5,7 @@ import { useEffect, useState } from 'react';
 function App() {
   
 
-  const [state, changeState ] = useState([
+  const [state ] = useState([
 
   ]
   );
