@@ -1,9 +1,24 @@
 import logo from './logo.svg';
 import './App.css';
+import { useEffect, useState } from 'react';
 
 function App() {
+  
+
+  const [state, changeState ] = useState([
+
+  ]
+  );
+
+  useEffect(() => {
+    fetch("https://ztj-demo-acs.azurewebsites.net/penguin_horde")
+      .then(response => response.json())
+      .then(data => console.log(data.horde));
+  })
+
   return (
     <div className="App">
+      <h1>Somethin' silly, yeah.</h1>
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <p>
@@ -18,6 +33,11 @@ function App() {
           Learn React
         </a>
       </header>
+      {
+        state.forEach(element => {
+          console.log("This should run 5 times " + element);
+        })
+      }
     </div>
   );
 }
